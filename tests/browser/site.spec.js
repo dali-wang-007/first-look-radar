@@ -14,7 +14,7 @@ test('sample is labelled, share card downloads, and small screens do not overflo
 });
 test('an old account analysis cannot appear after logout and another login',async({page})=>{
  await page.goto('/#test');
- const signup=async suffix=>{await page.getByRole('button',{name:'登录 / 注册'}).click();await page.getByRole('button',{name:'注册新账号'}).click();await page.getByLabel('用户名',{exact:true}).fill('race_'+Date.now().toString(36)+suffix);await page.getByLabel('密码',{exact:true}).fill('Browser-test-password-123');await page.getByRole('button',{name:'创建账号'}).click();await expect(page.locator('#authDialog')).not.toBeVisible();};
+ const signup=async suffix=>{await page.getByRole('button',{name:'登录 / 注册'}).click();await page.getByRole('button',{name:'注册新账号'}).click();await page.getByLabel('用户名',{exact:true}).fill('race_'+Date.now().toString(36)+suffix+Math.random().toString(36).slice(2,6));await page.getByLabel('密码',{exact:true}).fill('Browser-test-password-123');await page.getByRole('button',{name:'创建账号'}).click();await expect(page.locator('#authDialog')).not.toBeVisible();};
  await signup('a');
  const image=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=20;c.height=20;c.getContext('2d').fillRect(0,0,20,20);return c.toDataURL('image/png').split(',')[1];});
  await page.locator('#photo').setInputFiles({name:'test.png',mimeType:'image/png',buffer:Buffer.from(image,'base64')});

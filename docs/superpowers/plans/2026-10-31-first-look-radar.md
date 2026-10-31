@@ -32,9 +32,9 @@
 
 **Interfaces:** validateInput(body)验证数据；validateReport(report)验证模型输出；hashPassword/verifyPassword处理密码。
 
-- [ ] 先写输入、报告、密码的行为测试，运行`npm test`确认失败。
-- [ ] 实现核心模块与数据表，运行`npm test`通过。
-- [ ] 提交核心变更。
+- [x] 先写输入、报告、密码的行为测试，运行`npm test`确认失败。
+- [x] 实现核心模块与数据表，运行`npm test`通过。
+- [x] 提交核心变更。
 
 ### Task 2: 账号和真实分析API
 
@@ -42,10 +42,10 @@
 
 **Interfaces:** Worker.fetch(request,env)提供/api/health、auth、reports、analyze；消费Task 1校验和D1结构。
 
-- [ ] 以真实本地D1执行账号、权限、配额与异常路径集成测试，先观察失败。
-- [ ] 实现HttpOnly会话、原子配额、Workers AI调用及报告持久化。
-- [ ] 测试账号隔离、删除、改密、AI错误与配额失败后释放。
-- [ ] 提交API。
+- [x] 以真实本地D1执行账号、权限、配额与异常路径集成测试，先观察失败。
+- [x] 实现HttpOnly会话、原子配额、Workers AI调用及报告持久化。
+- [x] 测试账号隔离、删除、改密、AI错误与配额失败后释放。
+- [x] 提交API。
 
 ### Task 3: 网站与分享
 
@@ -53,17 +53,17 @@
 
 **Interfaces:** 前端消费Task 2的同源API；report.js绘图与本地PNG导出；Pages构建剥离账号和真实分析。
 
-- [ ] 写浏览器关键用户流程测试，确认未实现时失败。
-- [ ] 实现首页、上传、登录、报告、历史、账号和本地分享卡。
-- [ ] 运行桌面/移动端、输入失败与导出验证。
-- [ ] 提交网站。
+- [x] 写浏览器关键用户流程测试，确认未实现时失败。
+- [x] 实现首页、上传、登录、报告、历史、账号和本地分享卡。
+- [x] 运行桌面/移动端、输入失败与导出验证。
+- [x] 提交网站。
 
 ### Task 4: 部署与验证
 
-**Files:** .github/workflows/pages.yml、README.md、docs/部署记录.md
+**Files:** scripts/deploy-pages.mjs、README.md、docs/部署记录.md（现有授权不含workflow，改用gh-pages静态分支发布）
 
-- [ ] 创建独立GitHub仓库并推送；启用Pages且核对网址。
-- [ ] 核对Cloudflare认证；创建独立D1、迁移、部署Worker与资源。
-- [ ] 验证在线登录、真实AI和报告，不对演示模式冒充完成。
-- [ ] 完整运行测试，独立代码审查并修复重要问题。
-- [ ] 写部署记录，交付网址和确切限制。
+- [x] 创建独立GitHub仓库并推送；启用Pages且核对网址。
+- [x] 核对Cloudflare认证；创建独立D1、迁移、部署Worker与资源。
+- [x] 验证在线登录、真实AI和报告，不对演示模式冒充完成。
+- [x] 完整运行测试，独立代码审查并修复重要问题。
+- [x] 写部署记录，交付网址和确切限制。
