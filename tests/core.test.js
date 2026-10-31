@@ -20,6 +20,11 @@ test('model refusals and malformed results never turn into sample reports',()=>{
   assert.throws(()=>readModelResult({response:JSON.stringify({canAnalyze:false,reason:'请上传面部清晰的单人照片。'})}),/单人/);
   assert.equal(readModelResult({response:JSON.stringify({canAnalyze:true,report:report()})}).title,'清爽利落，自然有光');
 });
+test('report rejects unsupported personality, age/ethnicity and claimed stranger reactions',()=>{
+ for(const summary of ['你天生善良、诚实可靠，做事自律，遇到压力也能保持冷静。','陌生人看到你会立刻信任你，认为你很专业，会愿意与你合作。','你看起来只有二十五岁，是典型的东亚女性，事业一定发展顺利。']){
+  const r=report();r.summary=summary;assert.throws(()=>validateReport(r));
+ }
+});
 test('salted password verification rejects wrong passwords and bad usernames',async()=>{
   const first=await hashPassword('My-strong-password');
   const second=await hashPassword('My-strong-password');

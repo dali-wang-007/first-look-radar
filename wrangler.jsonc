@@ -7,6 +7,6 @@
   "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
   "ai": { "binding": "AI" },
   "vars": { "DAILY_USER_LIMIT": "3", "DAILY_SITE_LIMIT": "30" },
-  "d1_databases": [{ "binding": "DB", "database_name": "first-look-radar-db", "database_id": "pending", "migrations_dir": "migrations" }],
+  "d1_databases": [{ "binding": "DB", "database_name": "first-look-radar-db", "database_id": "8d3a5b87-7ba8-4115-b874-aa81725e1608", "migrations_dir": "migrations" }],
   "observability": { "enabled": false }
 }
