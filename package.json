@@ -1,0 +1,17 @@
+{
+  "name": "first-look-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "playwright test",
+    "build:pages": "node scripts/build-pages.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "wrangler": "^4.45.0"
+  }
+}
